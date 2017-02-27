@@ -1,5 +1,5 @@
 {
-  "name": "react-native-smooch",
+  "name": "bamlab-react-native-smooch",
   "version": "0.2.0",
   "description": "A React Native client for smooch.io",
   "main": "./lib/SmoochClient.js",
