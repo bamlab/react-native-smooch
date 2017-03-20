@@ -67,5 +67,11 @@ RCT_EXPORT_METHOD(setSignedUpAt:(NSDate*)date) {
   [SKTUser currentUser].signedUpAt = date;
 };
 
+RCT_EXPORT_METHOD(sendMessage:(NSString*)email) {
+  NSLog(@"Smooch sendMessage");
+
+  [[Smooch conversation] sendMessage:[[SKTMessage alloc] initWithText:email]];
+};
+
 
 @end

@@ -12,6 +12,7 @@ import com.facebook.react.bridge.ReadableType;
 import java.util.HashMap;
 import java.util.Map;
 
+import io.smooch.core.Message;
 import io.smooch.core.Smooch;
 import io.smooch.core.User;
 import io.smooch.ui.ConversationActivity;
@@ -64,6 +65,11 @@ public class ReactNativeSmooch extends ReactContextBaseJavaModule {
     @ReactMethod
     public void setUserProperties(ReadableMap properties) {
         User.getCurrentUser().addProperties(getUserProperties(properties));
+    }
+
+    @ReactMethod
+    public void sendMessage(String message) {
+        Smooch.getConversation().sendMessage(new Message(message));
     }
 
     private Map<String, Object> getUserProperties(ReadableMap properties) {
